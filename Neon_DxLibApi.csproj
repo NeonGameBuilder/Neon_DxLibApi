@@ -1,9 +1,35 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>NeonDX.DxLibApi</RootNamespace>
+    <AssemblyName>NeonDxLibApi</AssemblyName>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>NeonDX DxLib Wrapper Library</Title>
+    <Version>1.0.0</Version>
+    <Authors>stk2k</Authors>
+    <Company>sazysoft</Company>
+    <Product>NeonGameBuilder</Product>
+    <Copyright>stk2k, 2023</Copyright>
+    <PackageProjectUrl>https://github.com/NeonGameBuilder/Neon_DxLibApi</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/NeonGameBuilder/Neon_DxLibApi</RepositoryUrl>
+    <PackageTags>DxLib;C#;Game</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
