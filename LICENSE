@@ -23,101 +23,101 @@ SOFTWARE.
 
 ## JPEG
 
-libjpegÅ@Copyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
+libjpeg„ÄÄCopyright (C) 1991-2013, Thomas G. Lane, Guido Vollbeding.
 
 
 ## PNG
 
-libpngÅ@Copyright (C) 2004, 2006-2012 Glenn Randers-Pehrson.
-zlibÅ@Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
+libpng„ÄÄCopyright (C) 2004, 2006-2012 Glenn Randers-Pehrson.
+zlib„ÄÄCopyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
 
 
 ## TIFF
 
-libtiffÅ@Copyright (c) 1988-1997 Sam Leffler
-libtiffÅ@Copyright (c) 1991-1997 Silicon Graphics, Inc.
+libtiff„ÄÄCopyright (c) 1988-1997 Sam Leffler
+libtiff„ÄÄCopyright (c) 1991-1997 Silicon Graphics, Inc.
 
 
 ## Ogg Vorbis
 
-	Å@Å@Å@Copyright (C) 2002-2009 Xiph.org Foundation
+	„ÄÄ„ÄÄ„ÄÄCopyright (C) 2002-2009 Xiph.org Foundation
 
-	Å@Å@Å@Redistribution and use in source and binary forms, with or without
-	Å@Å@Å@modification, are permitted provided that the following conditions
-	Å@Å@Å@are met:
+	„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+	„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+	„ÄÄ„ÄÄ„ÄÄare met:
 
-	Å@Å@Å@- Redistributions of source code must retain the above copyright
-	Å@Å@Å@notice, this list of conditions and the following disclaimer.
+	„ÄÄ„ÄÄ„ÄÄ- Redistributions of source code must retain the above copyright
+	„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
 
-	Å@Å@Å@- Redistributions in binary form must reproduce the above copyright
-	Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-	Å@Å@Å@documentation and/or other materials provided with the distribution.
+	„ÄÄ„ÄÄ„ÄÄ- Redistributions in binary form must reproduce the above copyright
+	„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+	„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
 
-	Å@Å@Å@- Neither the name of the Xiph.org Foundation nor the names of its
-	Å@Å@Å@contributors may be used to endorse or promote products derived from
-	Å@Å@Å@this software without specific prior written permission.
+	„ÄÄ„ÄÄ„ÄÄ- Neither the name of the Xiph.org Foundation nor the names of its
+	„ÄÄ„ÄÄ„ÄÄcontributors may be used to endorse or promote products derived from
+	„ÄÄ„ÄÄ„ÄÄthis software without specific prior written permission.
 
-	Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-	Å@Å@Å@``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-	Å@Å@Å@LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-	Å@Å@Å@A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
-	Å@Å@Å@OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-	Å@Å@Å@SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-	Å@Å@Å@LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-	Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-	Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-	Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-	Å@Å@Å@OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+	„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+	„ÄÄ„ÄÄ„ÄÄ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+	„ÄÄ„ÄÄ„ÄÄLIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+	„ÄÄ„ÄÄ„ÄÄA PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE FOUNDATION
+	„ÄÄ„ÄÄ„ÄÄOR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+	„ÄÄ„ÄÄ„ÄÄSPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+	„ÄÄ„ÄÄ„ÄÄLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+	„ÄÄ„ÄÄ„ÄÄDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+	„ÄÄ„ÄÄ„ÄÄTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	„ÄÄ„ÄÄ„ÄÄ(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+	„ÄÄ„ÄÄ„ÄÄOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 
 ## Mersenne Twister
 
-	Å@Å@Å@Mersenne Twister
-	Å@Å@Å@Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
-	Å@Å@Å@All rights reserved.
+	„ÄÄ„ÄÄ„ÄÄMersenne Twister
+	„ÄÄ„ÄÄ„ÄÄCopyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,
+	„ÄÄ„ÄÄ„ÄÄAll rights reserved.
 
-	Å@Å@Å@Redistribution and use in source and binary forms, with or without
-	Å@Å@Å@modification, are permitted provided that the following conditions
-	Å@Å@Å@are met:
+	„ÄÄ„ÄÄ„ÄÄRedistribution and use in source and binary forms, with or without
+	„ÄÄ„ÄÄ„ÄÄmodification, are permitted provided that the following conditions
+	„ÄÄ„ÄÄ„ÄÄare met:
 
-	Å@Å@Å@1. Redistributions of source code must retain the above copyright
-	Å@Å@Å@notice, this list of conditions and the following disclaimer.
+	„ÄÄ„ÄÄ„ÄÄ1. Redistributions of source code must retain the above copyright
+	„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer.
 
-	Å@Å@Å@2. Redistributions in binary form must reproduce the above copyright
-	Å@Å@Å@notice, this list of conditions and the following disclaimer in the
-	Å@Å@Å@documentation and/or other materials provided with the distribution.
+	„ÄÄ„ÄÄ„ÄÄ2. Redistributions in binary form must reproduce the above copyright
+	„ÄÄ„ÄÄ„ÄÄnotice, this list of conditions and the following disclaimer in the
+	„ÄÄ„ÄÄ„ÄÄdocumentation and/or other materials provided with the distribution.
 
-	Å@Å@Å@3. The name of the author may not be used to endorse or promote products
-	Å@Å@Å@derived from this software without specific prior written permission.
+	„ÄÄ„ÄÄ„ÄÄ3. The name of the author may not be used to endorse or promote products
+	„ÄÄ„ÄÄ„ÄÄderived from this software without specific prior written permission.
 
-	Å@Å@Å@THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-	Å@Å@Å@IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-	Å@Å@Å@OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-	Å@Å@Å@IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
-	Å@Å@Å@INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-	Å@Å@Å@NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-	Å@Å@Å@DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-	Å@Å@Å@THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-	Å@Å@Å@(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-	Å@Å@Å@THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+	„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+	„ÄÄ„ÄÄ„ÄÄIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+	„ÄÄ„ÄÄ„ÄÄOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+	„ÄÄ„ÄÄ„ÄÄIN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+	„ÄÄ„ÄÄ„ÄÄINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+	„ÄÄ„ÄÄ„ÄÄNOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+	„ÄÄ„ÄÄ„ÄÄDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+	„ÄÄ„ÄÄ„ÄÄTHEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+	„ÄÄ„ÄÄ„ÄÄ(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+	„ÄÄ„ÄÄ„ÄÄTHIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ## Bullet
 
-	Å@Å@Å@BulletÅ@Copyright (c) 2003-2006 Erwin Coumans.
+	„ÄÄ„ÄÄ„ÄÄBullet„ÄÄCopyright (c) 2003-2006 Erwin Coumans.
 
 
 ## Live2D
 
-	Å@Å@Å@Live2D Open Software égópãñë¯å_ñÒèë
-	Å@Å@Å@https://www.live2d.com/eula/live2d-open-software-license-agreement_jp.html
+	„ÄÄ„ÄÄ„ÄÄLive2D Open Software ‰ΩøÁî®Ë®±Ë´æÂ•ëÁ¥ÑÊõ∏
+	„ÄÄ„ÄÄ„ÄÄhttps://www.live2d.com/eula/live2d-open-software-license-agreement_jp.html
 
-	Å@Å@Å@Live2D Proprietary Software égópãñë¯å_ñÒèë
-	Å@Å@Å@https://www.live2d.com/eula/live2d-proprietary-software-license-agreement_jp.html
+	„ÄÄ„ÄÄ„ÄÄLive2D Proprietary Software ‰ΩøÁî®Ë®±Ë´æÂ•ëÁ¥ÑÊõ∏
+	„ÄÄ„ÄÄ„ÄÄhttps://www.live2d.com/eula/live2d-proprietary-software-license-agreement_jp.html
 
 
-## ÇcÇwÉâÉCÉuÉâÉä
+## Ôº§Ôº∏„É©„Ç§„Éñ„É©„É™
 
-	Å@Å@Å@DX Library Copyright (C) 2001-2019 Takumi Yamada.
+	„ÄÄ„ÄÄ„ÄÄDX Library Copyright (C) 2001-2019 Takumi Yamada.
 
