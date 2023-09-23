@@ -18,6 +18,14 @@ namespace NeonDX.DxLibApi
         }
 
         /**
+         * NULLハンドル
+         */
+        public static NDX_Handle Null
+        {
+            get { return new NDX_Handle(); }
+        }
+
+        /**
          * コンストラクタ
          */
         public NDX_Handle(int handle = 0)

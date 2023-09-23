@@ -8,7 +8,7 @@ namespace NeonDX.DxLibApi
     {
         private bool _modified = false;
 
-        private NDX_Handle? _handle;
+        private NDX_Handle _handle;
 
         /**
          * 前回の描画フレームから変更されたか
@@ -22,7 +22,7 @@ namespace NeonDX.DxLibApi
         /**
          * ハンドル
          */
-        public NDX_Handle? Handle
+        public NDX_Handle Handle
         {
             get { return _handle; }
             set { _handle = value; }
@@ -33,7 +33,7 @@ namespace NeonDX.DxLibApi
          */
         public NDX_Object()
         {
-            _handle = null;
+            _handle = NDX_Handle.Null;
         }
         public NDX_Object(NDX_Handle handle)
         {
