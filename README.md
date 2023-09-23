@@ -1,6 +1,6 @@
 ﻿# 用途
 
- [Dxライブラリ](https://dxlib.xsrv.jp/index.html)\(https://dxlib.xsrv.jp/index.html\)をラップしてクラスにまとめたC#ライブラリです。
+ [Dxライブラリ](https://dxlib.xsrv.jp/index.html) をラップしてクラスにまとめたC#ライブラリです。
 
 
 ## NDX_API_Base
