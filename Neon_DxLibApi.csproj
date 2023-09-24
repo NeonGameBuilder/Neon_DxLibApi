@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>NeonDX.DxLibApi</RootNamespace>
     <AssemblyName>NeonDxLibApi</AssemblyName>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>NeonDX DxLib Wrapper Library</Title>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>stk2k</Authors>
     <Company>sazysoft</Company>
     <Product>NeonGameBuilder</Product>
@@ -20,10 +20,6 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="DxLib.NETDLL" Version="3.2.4.1" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Update="LICENSE">

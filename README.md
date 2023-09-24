@@ -32,7 +32,18 @@
 
 .Net 7
 
+# インストール方法
+
+## Nuget経由
+
+「ソリューションのNuGetパッケージの管理」から"NeonDxLibApi"で検索、インストール
+
+https://www.nuget.org/packages/NeonDxLibApi
+
 # 依存ライブラリ
+
+Neon_DxLibApiの実行にはDXライブラリのモジュール(DxLib.dll/DxLib_x64.dll)が必要です。下記のパッケージ(DxLib.NETDLL)に含まれているので実行モジュール(Exe)作成時に参照を追加してください。
+
 
 DxLib.NETDLL
  - Web: https://dxlib.xsrv.jp/index.html
