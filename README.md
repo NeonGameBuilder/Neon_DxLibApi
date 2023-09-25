@@ -54,7 +54,3 @@ DxLib.NETDLL
 MITライセンス
 (詳細はLICENSEを参照)
 
-
-
-
-
