@@ -1,4 +1,4 @@
-﻿# 用途
+# 用途
 
  [Dxライブラリ](https://dxlib.xsrv.jp/index.html) をラップしてクラスにまとめたC#ライブラリです。
 

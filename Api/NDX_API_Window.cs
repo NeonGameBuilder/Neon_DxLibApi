@@ -57,5 +57,12 @@ namespace NeonDX.DxLibApi
             int res = DxLibDLL.DX.SetScreenFlipTargetWindow(hwnd, scaleX, scaleY);
             VerifyDxLibResult(res, "SetScreenFlipTargetWindow");
         }
+
+        // ScreenFlip描画対象ウィンドウ指定
+        public static void SetScreenFlipTargetWindow(IntPtr hwnd)
+        {
+            int res = DxLibDLL.DX.SetScreenFlipTargetWindow(hwnd);
+            VerifyDxLibResult(res, "SetScreenFlipTargetWindow");
+        }
     }
 }
