@@ -36,8 +36,7 @@ NDX_API_System.DxLib_Init();
 // ウィンドウモード
 NDX_API_Window.ChangeWindowMode(true);
 
-var loop = true;
-while(loop)
+while(1)
 {
     // 裏画面をクリア
     NDX_API_Graphics2D.ClearDrawScreen();
@@ -45,7 +44,7 @@ while(loop)
     // ESCキーが押されていたら終了
     if (NDX_API_Input.CheckHitKey(NDX_API_Input.KEY_INPUT_ESCAPE))
     {
-        loop = false;
+        break;
     }
 
     // 描画をここに書きます
