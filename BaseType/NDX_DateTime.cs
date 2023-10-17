@@ -98,5 +98,12 @@ namespace NeonDX.DxLibApi
             _second = second;
         }
 
+        /**
+         * to string
+         */
+        public override string ToString()
+        {
+            return $"{_year:D4}/{_month:D2}/{_day:D2} {_hour:D2}:{_minute:D2}:{_second:D2}";
+        }
     }
 }

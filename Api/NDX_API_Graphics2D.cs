@@ -1,5 +1,10 @@
 ﻿
+using NeonDX.DxLibApi.Debug;
+using System.ComponentModel;
+using System;
+using System.Drawing;
 using static DxLibDLL.DX;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace NeonDX.DxLibApi
 {
@@ -23,21 +28,70 @@ namespace NeonDX.DxLibApi
         {
             uint ucolor = color.ToColorUint();
             int res = DxLibDLL.DX.DrawBox(x1, y1, x2, y2, ucolor, FillFlag ? TRUE : FALSE);
-            VerifyDxLibResult(res, "DrawBox");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x1", $"{x1}"),
+                    new NeonDxCallStack.ApiArg("y1", $"{y1}"),
+                    new NeonDxCallStack.ApiArg("x2", $"{x2}"),
+                    new NeonDxCallStack.ApiArg("y2", $"{y2}"),
+                    new NeonDxCallStack.ApiArg("color", $"{color}"),
+                    new NeonDxCallStack.ApiArg("FillFlag", $"{FillFlag}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawBox);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // メモリに読みこんだグラフィックの描画
         public static void DrawGraph(int x, int y, NDX_Handle GrHandle, bool TransFlag)
         {
             int res = DxLibDLL.DX.DrawGraph(x, y, GrHandle.Value, TransFlag ? TRUE : FALSE);
-            VerifyDxLibResult(res, "DrawGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x", $"{x}"),
+                    new NeonDxCallStack.ApiArg("y", $"{y}"),
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                    new NeonDxCallStack.ApiArg("TransFlag", $"{TransFlag}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 	メモリに読みこんだグラフィックの拡大縮小描画
         public static void DrawExtendGraph(int x1, int y1, int x2, int y2, NDX_Handle GrHandle, bool TransFlag)
         {
             int res = DxLibDLL.DX.DrawExtendGraph(x1, y1, x2, y2, GrHandle.Value, TransFlag ? TRUE : FALSE);
-            VerifyDxLibResult(res, "DrawExtendGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawExtendGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x1", $"{x1}"),
+                    new NeonDxCallStack.ApiArg("y1", $"{y1}"),
+                    new NeonDxCallStack.ApiArg("x2", $"{x2}"),
+                    new NeonDxCallStack.ApiArg("y2", $"{y2}"),
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                    new NeonDxCallStack.ApiArg("TransFlag", $"{TransFlag}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawExtendGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // グラフィックのサイズを得る
@@ -45,7 +99,20 @@ namespace NeonDX.DxLibApi
         {
             int width, height;
             int res = DxLibDLL.DX.GetGraphSize(GrHandle.Value, out width, out height);
-            VerifyDxLibResult(res, "GetGraphSize");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetGraphSize, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetGraphSize);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return new NDX_Size2D(width, height);
         }
 
@@ -53,7 +120,20 @@ namespace NeonDX.DxLibApi
         public static NDX_Handle LoadGraph(string FileName)
         {
             int res = DxLibDLL.DX.LoadGraph(FileName);
-            VerifyDxLibResult(res, "LoadGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("FileName", $"{FileName}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_LoadGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             var handle = new NDX_Handle(res);
             _loaded_graph_handles[res] = handle;
             return handle;
@@ -65,7 +145,25 @@ namespace NeonDX.DxLibApi
             var handles = new List<NDX_Handle>(AllNum);
             int[] buffer = new int[AllNum];
             int res = DxLibDLL.DX.LoadDivGraph(FileName, AllNum, XNum, YNum, XSize, YSize, buffer);
-            VerifyDxLibResult(res, "LoadDivGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadDivGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("FileName", $"{FileName}"),
+                    new NeonDxCallStack.ApiArg("AllNum", $"{AllNum}"),
+                    new NeonDxCallStack.ApiArg("XNum", $"{XNum}"),
+                    new NeonDxCallStack.ApiArg("YNum", $"{YNum}"),
+                    new NeonDxCallStack.ApiArg("XSize", $"{XSize}"),
+                    new NeonDxCallStack.ApiArg("YSize", $"{YSize}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_LoadDivGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             for (int i = 0; i < AllNum; i++)
             {
                 var handle = new NDX_Handle(buffer[i]);
@@ -79,7 +177,22 @@ namespace NeonDX.DxLibApi
         public static NDX_Handle MakeScreen(int SizeX, int SizeY, bool UseAlphaChannel)
         {
             int res = DxLibDLL.DX.MakeScreen(SizeX, SizeY, UseAlphaChannel ? TRUE : FALSE);
-            VerifyDxLibResult(res, "MakeScreen");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_MakeScreen, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("SizeX", $"{SizeX}"),
+                    new NeonDxCallStack.ApiArg("SizeY", $"{SizeY}"),
+                    new NeonDxCallStack.ApiArg("UseAlphaChannel", $"{UseAlphaChannel}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_MakeScreen);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return new NDX_Handle(res);
         }
 
@@ -87,21 +200,66 @@ namespace NeonDX.DxLibApi
         public static void DrawPixel(int x, int y, NDX_Color color)
         {
             int res = DxLibDLL.DX.DrawPixel(x, y, color.ToColorUint());
-            VerifyDxLibResult(res, "DrawPixel");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawPixel, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x", $"{x}"),
+                    new NeonDxCallStack.ApiArg("y", $"{y}"),
+                    new NeonDxCallStack.ApiArg("color", $"{color}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawPixel);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 	文字列を描画する
         public static void DrawString(int x, int y, string text, NDX_Color color)
         {
             int res = DxLibDLL.DX.DrawString(x, y, text, color.ToColorUint());
-            VerifyDxLibResult(res, "DrawString");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawString, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x", $"{x}"),
+                    new NeonDxCallStack.ApiArg("y", $"{y}"),
+                    new NeonDxCallStack.ApiArg("text", $"{text}"),
+                    new NeonDxCallStack.ApiArg("color", $"{color}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawString);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 指定のフォントデータで文字列を描画する
         public static void DrawStringToHandle(int x, int y, string text, NDX_Color color, int FontHandle)
         {
             int res = DxLibDLL.DX.DrawStringToHandle(x, y, text, color.ToColorUint(), FontHandle);
-            VerifyDxLibResult(res, "DrawStringToHandle");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawStringToHandle, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x", $"{x}"),
+                    new NeonDxCallStack.ApiArg("y", $"{y}"),
+                    new NeonDxCallStack.ApiArg("text", $"{text}"),
+                    new NeonDxCallStack.ApiArg("color", $"{color}"),
+                    new NeonDxCallStack.ApiArg("FontHandle", $"{FontHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DrawStringToHandle);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 	描画した時の文字列の幅(ドット単位)を得る
@@ -109,7 +267,21 @@ namespace NeonDX.DxLibApi
         {
             length = length > 0 ? length : text.Length;
             int res = DxLibDLL.DX.GetDrawStringWidth(text, length);
-            VerifyDxLibResult(res, "GetDrawStringWidth");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidth, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("text", $"{text}"),
+                    new NeonDxCallStack.ApiArg("length", $"{length}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetDrawStringWidth);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return res;
         }
 
@@ -118,7 +290,21 @@ namespace NeonDX.DxLibApi
         {
             length = length > 0 ? length : text.Length;
             int res = DxLibDLL.DX.GetDrawStringWidthToHandle(text, length, FontHandle);
-            VerifyDxLibResult(res, "GetDrawStringWidthToHandle");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidthToHandle, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("text", $"{text}"),
+                    new NeonDxCallStack.ApiArg("length", $"{length}"),
+                    new NeonDxCallStack.ApiArg("FontHandle", $"{FontHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetDrawStringWidthToHandle);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
             return res;
         }
 
@@ -126,21 +312,61 @@ namespace NeonDX.DxLibApi
         public static void GetDrawScreenGraph(int x1, int y1, int x2, int y2, NDX_Handle GrHandle)
         {
             int res = DxLibDLL.DX.GetDrawScreenGraph(x1, y1, x2, y2, GrHandle.Value);
-            VerifyDxLibResult(res, "GetDrawScreenGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawScreenGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("x1", $"{x1}"),
+                    new NeonDxCallStack.ApiArg("y1", $"{y1}"),
+                    new NeonDxCallStack.ApiArg("x2", $"{x2}"),
+                    new NeonDxCallStack.ApiArg("y2", $"{y2}"),
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetDrawScreenGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 指定のグラフィックをメモリ上から削除する
         public static void DeleteGraph(NDX_Handle GrHandle)
         {
             int res = DxLibDLL.DX.DeleteGraph(GrHandle.Value);
-            VerifyDxLibResult(res, "DeleteGraph");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DeleteGraph, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DeleteGraph);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 描画先グラフィック領域の指定
         public static void SetDrawScreen(NDX_Handle DrawScreen)
         {
             int res = DxLibDLL.DX.SetDrawScreen(DrawScreen.Value);
-            VerifyDxLibResult(res, "SetDrawScreen");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("DrawScreen", $"{DrawScreen}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_SetDrawScreen);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
         public static void SetDrawScreen(EnumScreen DrawScreen)
         {
@@ -151,21 +377,59 @@ namespace NeonDX.DxLibApi
                 case EnumScreen.Front: scr = DX_SCREEN_FRONT; break;
             }
             int res = DxLibDLL.DX.SetDrawScreen(scr);
-            VerifyDxLibResult(res, "SetDrawScreen");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("DrawScreen", $"{DrawScreen}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_SetDrawScreen);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 画面モードの変更
         public static void SetGraphMode(int SizeX, int SizeY, int ColorBitNum)
         {
             int res = DxLibDLL.DX.SetGraphMode(SizeX, SizeY, ColorBitNum);
-            VerifyDxLibResult(res, "SetGraphMode");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetGraphMode, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("SizeX", $"{SizeX}"),
+                    new NeonDxCallStack.ApiArg("SizeY", $"{SizeY}"),
+                    new NeonDxCallStack.ApiArg("ColorBitNum", $"{ColorBitNum}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_SetGraphMode);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 現在の画面の大きさとカラービット数を得る
         public static void GetScreenState(out int SizeX, out int SizeY, out int ColorBitDepth)
         {
             int res = DxLibDLL.DX.GetScreenState(out SizeX, out SizeY, out ColorBitDepth);
-            VerifyDxLibResult(res, "GetScreenState");
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetScreenState);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, new NeonDxCallStack.ApiArg[]
+                {
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_GetScreenState);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 新しいフォントデータを作成
@@ -183,7 +447,23 @@ namespace NeonDX.DxLibApi
             };
             int nFontType = map.ContainsKey(FontType) ? map[FontType] : -1;
             int res = DxLibDLL.DX.CreateFontToHandle(font_name, Size, Thick, nFontType);
-            VerifyDxLibResult(res, "CreateFontToHandle");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_CreateFontToHandle, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("font_name", $"{font_name}"),
+                    new NeonDxCallStack.ApiArg("Size", $"{Size}"),
+                    new NeonDxCallStack.ApiArg("Thick", $"{Thick}"),
+                    new NeonDxCallStack.ApiArg("FontType", $"{FontType}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_CreateFontToHandle);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return res;
         }
 
@@ -191,14 +471,37 @@ namespace NeonDX.DxLibApi
         public static void ClearDrawScreen()
         {
             int res = DxLibDLL.DX.ClearDrawScreen();
-            VerifyDxLibResult(res, "ClearDrawScreen");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ClearDrawScreen, new NeonDxCallStack.ApiArg[]
+                {
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_ClearDrawScreen);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
         }
 
         // フリップ関数、画面の裏ページ（普段は表示されていない）を 表ページ（普段表示されている）に反映する
         public static void ScreenFlip()
         {
             int res = DxLibDLL.DX.ScreenFlip();
-            VerifyDxLibResult(res, "ScreenFlip");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ScreenFlip, new NeonDxCallStack.ApiArg[]
+                {
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_ScreenFlip);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
     }
 }

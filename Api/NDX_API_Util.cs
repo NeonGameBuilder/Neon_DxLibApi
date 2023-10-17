@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using NeonDX.DxLibApi.Debug;
+using System.Collections.Generic;
 //using System.Runtime.InteropServices;
 
 using static DxLibDLL.DX;
@@ -35,7 +36,19 @@ namespace NeonDX.DxLibApi
         public static void WaitTimer(int msec)
         {
             int res = DxLibDLL.DX.WaitTimer(msec);
-            VerifyDxLibResult(res, "WaitTimer");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Util_WaitTimer, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("msec", $"{msec}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Util_WaitTimer);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 浮動小数点型のカラー値を取得する
@@ -63,7 +76,20 @@ namespace NeonDX.DxLibApi
         {
             DATEDATA dt;
             int res = DxLibDLL.DX.GetDateTime(out dt);
-            VerifyDxLibResult(res, "GetDateTime");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Util_GetDateTime, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("datetime", $"{datetime}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Util_GetDateTime);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             datetime.Year = dt.Year;
             datetime.Month = dt.Mon;
             datetime.Day = dt.Day;

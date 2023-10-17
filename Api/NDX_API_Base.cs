@@ -11,25 +11,25 @@ namespace NeonDX.DxLibApi
         public const int FALSE = DxLibDLL.DX.FALSE;
 
         // 結果を検証
-        protected static void VerifyDxLibResult(int res, string api)
+        protected static void VerifyDxLibResult(int result, EnumDxLibApi api)
         {
-            if (res == -1)
+            if (result == -1)
             {
-                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}");
+                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}", api);
             }
         }
-        protected static void VerifyDxLibResult(string res, string api)
+        protected static void VerifyDxLibResult(string result, EnumDxLibApi api)
         {
-            if (res == null)
+            if (result == null)
             {
-                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}");
+                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}", api);
             }
         }
-        protected static void VerifyDxLibResult(float res, string api)
+        protected static void VerifyDxLibResult(float result, EnumDxLibApi api)
         {
-            if (res == -1.0f)
+            if (result == -1.0f)
             {
-                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}");
+                throw new NeonDxDxLibApiException($"Failed to call DxLib function: {api}", api);
             }
         }
 

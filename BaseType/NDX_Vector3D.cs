@@ -54,5 +54,13 @@ namespace NeonDX.DxLibApi
             _y = y;
             _z = z;
         }
+
+        /**
+         * to string
+         */
+        public override string ToString()
+        {
+            return $"<{_x}, {_y}, {_z}>";
+        }
     }
 }

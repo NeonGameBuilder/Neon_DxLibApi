@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NeonDX.DxLibApi.Debug;
+using System;
 
 namespace NeonDX.DxLibApi
 {
@@ -11,28 +12,76 @@ namespace NeonDX.DxLibApi
         public static void SetOutApplicationLogValidFlag(bool enabled)
         {
             int res = DxLibDLL.DX.SetOutApplicationLogValidFlag(enabled ? TRUE : FALSE);
-            VerifyDxLibResult(res, "SetOutApplicationLogValidFlag");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetOutApplicationLogValidFlag, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_SetOutApplicationLogValidFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // バックグランドでも動作させるか
         public static void SetAlwaysRunFlag(bool flag)
         {
             int res = DxLibDLL.DX.SetAlwaysRunFlag(flag ? TRUE : FALSE);
-            VerifyDxLibResult(res, "SetAlwaysRunFlag");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetAlwaysRunFlag, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("flag", $"{flag}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_SetAlwaysRunFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // マウスカーソル表示
         public static void SetMouseDispFlag(bool show)
         {
             int res = DxLibDLL.DX.SetMouseDispFlag(show ? TRUE : FALSE);
-            VerifyDxLibResult(res, "SetMouseDispFlag");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetMouseDispFlag, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("show", $"{show}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_SetMouseDispFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // DXライブラリの初期化
         public static int DxLib_Init()
         {
             int res = DxLibDLL.DX.DxLib_Init();
-            VerifyDxLibResult(res, "DxLib_Init");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_Init, new NeonDxCallStack.ApiArg[]
+                {
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_DxLib_Init);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return res;
         }
 
@@ -40,14 +89,37 @@ namespace NeonDX.DxLibApi
         public static void DxLib_End()
         {
             int res = DxLibDLL.DX.DxLib_End();
-            VerifyDxLibResult(res, "DxLib_End");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_End, new NeonDxCallStack.ApiArg[]
+                {
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_DxLib_End);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // ユーザウィンドウ
         public static void SetUserWindow(IntPtr hwnd)
         {
             int res = DxLibDLL.DX.SetUserWindow(hwnd);
-            VerifyDxLibResult(res, "SetUserWindow");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetUserWindow, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("hwnd", $"{hwnd}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.System_SetUserWindow);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
     }
 }

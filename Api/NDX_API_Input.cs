@@ -1,4 +1,6 @@
 ﻿
+using NeonDX.DxLibApi.Debug;
+
 namespace NeonDX.DxLibApi
 {
     /**
@@ -120,14 +122,40 @@ namespace NeonDX.DxLibApi
         public static void GetHitKeyStateAll(byte[] KeyStateBuf)
         {
             int res = DxLibDLL.DX.GetHitKeyStateAll(KeyStateBuf);
-            VerifyDxLibResult(res, "GetHitKeyStateAll");
+            VerifyDxLibResult(res, EnumDxLibApi.Input_GetHitKeyStateAll);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Input_GetHitKeyStateAll, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("KeyStateBuf", string.Join(",", KeyStateBuf)),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Input_GetHitKeyStateAll);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
         }
 
         // 	入力が終了しているか取得する
         public static int CheckKeyInput(int InputHandle)
         {
             int res = DxLibDLL.DX.CheckKeyInput(InputHandle);
-            VerifyDxLibResult(res, "CheckKeyInput");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckKeyInput, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("InputHandle", $"{InputHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Input_CheckKeyInput);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return res;
         }
 
@@ -135,7 +163,20 @@ namespace NeonDX.DxLibApi
         public static bool CheckHitKey(int KeyCode)
         {
             int res = DxLibDLL.DX.CheckHitKey(KeyCode);
-            VerifyDxLibResult(res, "CheckHitKey");
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckHitKey, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("KeyCode", $"{KeyCode}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Input_CheckHitKey);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
             return res == 1;
         }
 
