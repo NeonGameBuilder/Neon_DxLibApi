@@ -19,7 +19,7 @@ namespace NeonDX.DxLibApi.Debug
 
             public override string ToString()
             {
-                return $"{ArgName}={ArgName}";
+                return $"{ArgName}={ArgValue}";
             }
         }
 
