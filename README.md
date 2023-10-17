@@ -80,7 +80,7 @@ try{
 }
 catch(NeonDxDxLibApiException ex)
 {
-    // DXライブラリの呼び出し履歴を表示
+    // DXライブラリの呼び出し履歴(失敗に至るまで呼び出されたAPI)を表示
     NeonDxCallStack.Dump((string str) =>
     {
         Debug.WriteLine(str);
@@ -90,7 +90,12 @@ catch(NeonDxDxLibApiException ex)
 
 <<出力ウィンドウのログ例>>
 ```
-[Graphics2D_LoadGraph]FileName=C:\\Tmp\\sample.mp4
+[Graphics2D_LoadGraph:-1]FileName=C:\\Tmp\\sample.mp4
+```
+
+<<ログフォーマット>>
+```
+[API名:結果コード]引数１=引数１の値, 引数2=引数2の値, ...
 ```
 
 
