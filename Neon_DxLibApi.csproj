@@ -8,7 +8,7 @@
     <AssemblyName>NeonDxLibApi</AssemblyName>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>NeonDX DxLib Wrapper Library</Title>
-    <Version>1.0.6</Version>
+    <Version>1.0.6.1</Version>
     <Authors>stk2k</Authors>
     <Company>sazysoft</Company>
     <Product>NeonGameBuilder</Product>

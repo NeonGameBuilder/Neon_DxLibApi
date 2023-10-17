@@ -16,6 +16,11 @@ namespace NeonDX.DxLibApi.Debug
                 ArgName = arg_name;
                 ArgValue = arg_value;
             }
+
+            public override string ToString()
+            {
+                return $"{ArgName}={ArgName}";
+            }
         }
 
         public class CallHistory
@@ -48,7 +53,7 @@ namespace NeonDX.DxLibApi.Debug
         /**
          * dump
          */
-        public static void Dump(Predicate<string> callback)
+        public static void Dump(Action<string> callback)
         {
             foreach(var item in _stack)
             {
