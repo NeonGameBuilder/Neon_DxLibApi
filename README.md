@@ -27,6 +27,39 @@
 
  アプリケーションやDxライブラリの初期化コードなどに関連するDxライブラリの関数を呼び出します。
 
+# 使用方法
+
+```
+// DXライブラリの初期化
+NDX_API_System.DxLib_Init();
+
+// ウィンドウモード
+NDX_API_Window.ChangeWindowMode(true);
+
+var loop = true;
+while(loop)
+{
+    // 裏画面をクリア
+    NDX_API_Graphics2D.ClearDrawScreen();
+
+    // ESCキーが押されていたら終了
+    if (NDX_API_Input.CheckHitKey(NDX_API_Input.KEY_INPUT_ESCAPE))
+    {
+        loop = false;
+    }
+
+    // 描画をここに書きます
+
+    // 裏画面に反映
+    NDX_API_Graphics2D.ScreenFlip();
+}
+
+// DXライブラリの終了
+NDX_API_System.DxLib_End();
+```
+
+
+
 
 # 実行環境
 
