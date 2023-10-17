@@ -39,7 +39,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Util_WaitTimer, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Util_WaitTimer, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("msec", $"{msec}"),
                 });
@@ -79,7 +79,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Util_GetDateTime, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Util_GetDateTime, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("datetime", $"{datetime}"),
                 });

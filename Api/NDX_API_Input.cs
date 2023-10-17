@@ -126,7 +126,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Input_GetHitKeyStateAll, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Input_GetHitKeyStateAll, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("KeyStateBuf", string.Join(",", KeyStateBuf)),
                 });
@@ -145,7 +145,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckKeyInput, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckKeyInput, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("InputHandle", $"{InputHandle}"),
                 });
@@ -166,7 +166,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckHitKey, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Input_CheckHitKey, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("KeyCode", $"{KeyCode}"),
                 });

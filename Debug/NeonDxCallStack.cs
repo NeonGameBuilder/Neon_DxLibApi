@@ -26,19 +26,41 @@ namespace NeonDX.DxLibApi.Debug
         public class CallHistory
         {
             public EnumDxLibApi Api { get; set; }
+            public string Result { get; set; } = string.Empty;
             public List<ApiArg> Args { get; set; } = new List<ApiArg>();
         }
 
         /**
          * push call history
          */
-        public static void Push(EnumDxLibApi api, params ApiArg[] args)
+        public static void Push(EnumDxLibApi api, int result, params ApiArg[] args)
         {
             var history = new CallHistory()
             { 
                 Api = api,
+                Result = $"{result}",
                 Args = new List<ApiArg>(args)
-        };
+            };
+            _stack.Push(history);
+        }
+        public static void Push(EnumDxLibApi api, string result, params ApiArg[] args)
+        {
+            var history = new CallHistory()
+            {
+                Api = api,
+                Result = result,
+                Args = new List<ApiArg>(args)
+            };
+            _stack.Push(history);
+        }
+        public static void Push(EnumDxLibApi api, float result, params ApiArg[] args)
+        {
+            var history = new CallHistory()
+            {
+                Api = api,
+                Result = $"{result}",
+                Args = new List<ApiArg>(args)
+            };
             _stack.Push(history);
         }
 
@@ -57,7 +79,7 @@ namespace NeonDX.DxLibApi.Debug
         {
             foreach(var item in _stack)
             {
-                string line = $"[{item.Api}]" + string.Join(",", item.Args);
+                string line = $"[{item.Api}:{item.Result}]" + string.Join(",", item.Args);
                 callback(line);
             }
         }

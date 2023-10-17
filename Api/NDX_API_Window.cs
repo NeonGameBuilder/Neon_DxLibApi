@@ -19,7 +19,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Window_SetMainWindowText, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetMainWindowText, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("text", $"{text}"),
                 });
@@ -38,7 +38,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Window_SetWindowIconID, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetWindowIconID, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("icon_id", $"{icon_id}"),
                 });
@@ -57,7 +57,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Window_ChangeWindowMode, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Window_ChangeWindowMode, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("window_mode", $"{window_mode}"),
                 });
@@ -96,7 +96,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Window_SetScreenFlipTargetWindow, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetScreenFlipTargetWindow, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("hwnd", $"{hwnd}"),
                 });
@@ -115,7 +115,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Window_SetScreenFlipTargetWindow, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetScreenFlipTargetWindow, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("hwnd", $"{hwnd}"),
                 });

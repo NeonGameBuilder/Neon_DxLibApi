@@ -15,7 +15,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_SetOutApplicationLogValidFlag, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetOutApplicationLogValidFlag, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
                 });
@@ -34,7 +34,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_SetAlwaysRunFlag, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetAlwaysRunFlag, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("flag", $"{flag}"),
                 });
@@ -53,7 +53,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_SetMouseDispFlag, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetMouseDispFlag, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("show", $"{show}"),
                 });
@@ -72,7 +72,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_Init, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_Init, res, new NeonDxCallStack.ApiArg[]
                 {
                 });
             }
@@ -92,7 +92,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_End, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_DxLib_End, res, new NeonDxCallStack.ApiArg[]
                 {
                 });
             }
@@ -110,7 +110,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.System_SetUserWindow, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.System_SetUserWindow, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("hwnd", $"{hwnd}"),
                 });

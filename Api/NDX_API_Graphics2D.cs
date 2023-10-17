@@ -31,7 +31,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x1", $"{x1}"),
                     new NeonDxCallStack.ApiArg("y1", $"{y1}"),
@@ -55,7 +55,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x", $"{x}"),
                     new NeonDxCallStack.ApiArg("y", $"{y}"),
@@ -77,7 +77,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawExtendGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawExtendGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x1", $"{x1}"),
                     new NeonDxCallStack.ApiArg("y1", $"{y1}"),
@@ -102,7 +102,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetGraphSize, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetGraphSize, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
                 });
@@ -123,7 +123,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("FileName", $"{FileName}"),
                 });
@@ -148,7 +148,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadDivGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_LoadDivGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("FileName", $"{FileName}"),
                     new NeonDxCallStack.ApiArg("AllNum", $"{AllNum}"),
@@ -180,7 +180,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_MakeScreen, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_MakeScreen, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("SizeX", $"{SizeX}"),
                     new NeonDxCallStack.ApiArg("SizeY", $"{SizeY}"),
@@ -203,7 +203,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawPixel, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawPixel, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x", $"{x}"),
                     new NeonDxCallStack.ApiArg("y", $"{y}"),
@@ -224,7 +224,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawString, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawString, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x", $"{x}"),
                     new NeonDxCallStack.ApiArg("y", $"{y}"),
@@ -246,7 +246,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawStringToHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawStringToHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x", $"{x}"),
                     new NeonDxCallStack.ApiArg("y", $"{y}"),
@@ -270,7 +270,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidth, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidth, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("text", $"{text}"),
                     new NeonDxCallStack.ApiArg("length", $"{length}"),
@@ -293,7 +293,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidthToHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawStringWidthToHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("text", $"{text}"),
                     new NeonDxCallStack.ApiArg("length", $"{length}"),
@@ -315,7 +315,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawScreenGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_GetDrawScreenGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("x1", $"{x1}"),
                     new NeonDxCallStack.ApiArg("y1", $"{y1}"),
@@ -338,7 +338,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DeleteGraph, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DeleteGraph, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
                 });
@@ -357,7 +357,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("DrawScreen", $"{DrawScreen}"),
                 });
@@ -380,7 +380,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetDrawScreen, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("DrawScreen", $"{DrawScreen}"),
                 });
@@ -399,7 +399,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetGraphMode, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetGraphMode, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("SizeX", $"{SizeX}"),
                     new NeonDxCallStack.ApiArg("SizeY", $"{SizeY}"),
@@ -421,7 +421,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DrawBox, res, new NeonDxCallStack.ApiArg[]
                 {
                 });
             }
@@ -450,7 +450,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_CreateFontToHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_CreateFontToHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("font_name", $"{font_name}"),
                     new NeonDxCallStack.ApiArg("Size", $"{Size}"),
@@ -474,7 +474,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ClearDrawScreen, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ClearDrawScreen, res, new NeonDxCallStack.ApiArg[]
                 {
                 });
             }
@@ -493,7 +493,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ScreenFlip, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ScreenFlip, res, new NeonDxCallStack.ApiArg[]
                 {
                 });
             }

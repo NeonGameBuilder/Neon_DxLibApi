@@ -18,7 +18,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightEnable, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightEnable, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
                 });
@@ -38,7 +38,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightAmbColor, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightAmbColor, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("color", $"{color}"),
                 });
@@ -58,7 +58,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightDifColor, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightDifColor, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("color", $"{color}"),
                 });
@@ -78,7 +78,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightSpcColor, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightSpcColor, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("color", $"{color}"),
                 });
@@ -98,7 +98,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypeDir, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypeDir, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("dir", $"{dir}"),
                 });
@@ -118,7 +118,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypePoint, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypePoint, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("pos", $"{pos}"),
                     new NeonDxCallStack.ApiArg("Range", $"{Range}"),
@@ -143,7 +143,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypeSpot, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_ChangeLightTypeSpot, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("pos", $"{pos}"),
                     new NeonDxCallStack.ApiArg("dir", $"{dir}"),
@@ -169,7 +169,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightEnableHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightEnableHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("LHandle", $"{LHandle}"),
                     new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
@@ -190,7 +190,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightAmbColorHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightAmbColorHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("LHandle", $"{LHandle}"),
                     new NeonDxCallStack.ApiArg("color", $"{color}"),
@@ -217,7 +217,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightTypeHandle, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetLightTypeHandle, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("LHandle", $"{LHandle}"),
                     new NeonDxCallStack.ApiArg("LightType", $"{LightType}"),
@@ -237,7 +237,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetUseLighting, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetUseLighting, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("use_light", $"{use_light}"),
                 });
@@ -257,7 +257,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetGlobalAmbientLight, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetGlobalAmbientLight, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("color", $"{color}"),
                 });
@@ -276,7 +276,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1LoadModel, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1LoadModel, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("filename", $"{filename}"),
                 });
@@ -298,7 +298,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetMaterialNum, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetMaterialNum, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                 });
@@ -319,7 +319,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimNum, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimNum, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                 });
@@ -340,7 +340,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimName, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimName, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("AnimIndex", $"{AnimIndex}"),
@@ -362,7 +362,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimTotalTime, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAnimTotalTime, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("AnimIndex", $"{AnimIndex}"),
@@ -384,7 +384,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1AttachAnim, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1AttachAnim, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("AnimIndex", $"{AnimIndex}"),
@@ -409,7 +409,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAttachAnimTotalTime, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetAttachAnimTotalTime, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("AttachIndex", $"{AttachIndex}"),
@@ -431,7 +431,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetAttachAnimTime, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetAttachAnimTime, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("AttachIndex", $"{AttachIndex}"),
@@ -453,7 +453,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetPosition, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetPosition, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("pos", $"{pos}"),
@@ -474,7 +474,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ClearDrawScreen, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ClearDrawScreen, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("scale", $"{scale}"),
@@ -495,7 +495,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetRotationXYZ, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetRotationXYZ, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("rot", $"{rot}"),
@@ -515,7 +515,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1DrawModel, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1DrawModel, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                 });
@@ -534,7 +534,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1DeleteModel, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1DeleteModel, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                 });
@@ -555,7 +555,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetCameraPositionAndTarget_UpVecY, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetCameraPositionAndTarget_UpVecY, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("pos", $"{pos}"),
                     new NeonDxCallStack.ApiArg("look_at", $"{look_at}"),
@@ -575,7 +575,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetCameraNearFar, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_SetCameraNearFar, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("Near", $"{Near}"),
                     new NeonDxCallStack.ApiArg("Far", $"{Far}"),
@@ -595,7 +595,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetMaterialOutLineWidth, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1SetMaterialOutLineWidth, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("MaterialIndex", $"{MaterialIndex}"),
@@ -616,7 +616,7 @@ namespace NeonDX.DxLibApi
 
             if (NeonDxLibApi.IsDebug)
             {
-                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetMaterialNormalMapTexture, new NeonDxCallStack.ApiArg[]
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics3D_MV1GetMaterialNormalMapTexture, res, new NeonDxCallStack.ApiArg[]
                 {
                     new NeonDxCallStack.ApiArg("MHandle", $"{MHandle}"),
                     new NeonDxCallStack.ApiArg("MaterialIndex", $"{MaterialIndex}"),

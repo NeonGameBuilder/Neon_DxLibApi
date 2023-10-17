@@ -57,7 +57,41 @@ while(1)
 NDX_API_System.DxLib_End();
 ```
 
+# デバッグモードとコールスタック
 
+NeonDxLibApiはDXライブラリのコール履歴を保持するスタックを持っています。このスタックはグローバルなbool型変数(NeonDxLibApi.IsDebug)をtrueに設定することで機能します。
+
+```
+// デバッグモードをONにする
+NeonDxLibApi.IsDebug = true;
+```
+
+デバッグモードが有効になったらDXライブラリの呼び出しは常にコールスタックに記録されます。API呼び出しが失敗した場合はcatchハンドラでこのコールスタックをダンプすることができます。
+DXライブラリの呼び出しが階層的に行われている場合を除き、DXライブラリの呼び出しが成功するとコールスタックの呼び出し情報はスタックから自動的に削除されます。
+つまり、NeonDxCallStack.Dumpによって表示されたコールスタックは最後の行で失敗したことを表します。
+
+```
+// デバッグモードをONにする
+NeonDxLibApi.IsDebug = true;
+
+// try～catchでDXライブラリの呼び出し失敗を捕捉する
+try{
+    // DXライブラリの呼び出し処理
+}
+catch(NeonDxDxLibApiException ex)
+{
+    // DXライブラリの呼び出し履歴を表示
+    NeonDxCallStack.Dump((string str) =>
+    {
+        Debug.WriteLine(str);
+    });
+}
+```
+
+<<出力ウィンドウのログ例>>
+```
+[Graphics2D_LoadGraph]FileName=C:\\Tmp\\sample.mp4
+```
 
 
 # 実行環境
