@@ -32,7 +32,9 @@ namespace NeonDX.DxLibApi
         Window_SetWindowIconID,
         Window_ChangeWindowMode,
         Window_SetScreenFlipTargetWindow,
-
+        Window_SetWindowUserCloseEnableFlag,
+        Window_GetWindowUserCloseFlag,
+        
         //===============================
         // Graphics2D
         //===============================

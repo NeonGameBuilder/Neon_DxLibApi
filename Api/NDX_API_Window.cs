@@ -126,5 +126,45 @@ namespace NeonDX.DxLibApi
                 NeonDxCallStack.Pop();
             }
         }
+
+        // Alt+F4や閉じるボタンで終了するかどうかのフラグを設定する
+        public static void SetWindowUserCloseEnableFlag(bool enabled)
+        {
+            int res = DxLibDLL.DX.SetWindowUserCloseEnableFlag(enabled ? TRUE : FALSE);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetWindowUserCloseEnableFlag, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Window_SetWindowUserCloseEnableFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+        }
+
+        // Alt+F4や閉じるボタンが押されたかどうかを取得する
+        public static bool GetWindowUserCloseFlag(bool StateResetFlag)
+        {
+            int res = DxLibDLL.DX.GetWindowUserCloseFlag(StateResetFlag ? TRUE : FALSE);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Window_GetWindowUserCloseFlag, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("StateResetFlag", $"{StateResetFlag}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Window_GetWindowUserCloseFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+
+            return res == TRUE;
+        }
     }
 }
