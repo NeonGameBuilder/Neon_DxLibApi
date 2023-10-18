@@ -101,6 +101,7 @@ catch(NeonDxDxLibApiException ex)
 
 # 実行環境
 
+.Net 6
 .Net 7
 
 # インストール方法
