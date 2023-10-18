@@ -505,5 +505,38 @@ namespace NeonDX.DxLibApi
             }
             */
         }
+
+        // フルスクリーン時に縦横比を維持する
+        public static void SetFullScreenResolutionMode(EnumResolutionMode resolution_mode)
+        {
+            int mode = 0;
+            switch (resolution_mode)
+            {
+                case EnumResolutionMode.Native:
+                    mode = DX_FSRESOLUTIONMODE_NATIVE;
+                    break;
+                case EnumResolutionMode.Desktop:
+                    mode = DX_FSRESOLUTIONMODE_DESKTOP;
+                    break;
+                case EnumResolutionMode.Maximum:
+                    mode = DX_FSRESOLUTIONMODE_MAXIMUM;
+                    break;
+            }
+            int res = DxLibDLL.DX.SetFullScreenResolutionMode(mode);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_SetFullScreenResolutionMode, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("resolution_mode", $"{resolution_mode}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_SetFullScreenResolutionMode);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+        }
+
     }
 }
