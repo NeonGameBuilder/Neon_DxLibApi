@@ -1,9 +1,6 @@
 ﻿using NeonDX.DxLibApi.Debug;
-using System.Collections.Generic;
-//using System.Runtime.InteropServices;
 
 using static DxLibDLL.DX;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace NeonDX.DxLibApi
 {
@@ -12,7 +9,12 @@ namespace NeonDX.DxLibApi
      */
     public class NDX_API_Window : NDX_API_Base
     {
-        // メインウィンドウテキストを変更
+        /**
+         * <sumary>
+         * メインウィンドウテキストを変更
+         * </sumary>
+         * <param name="text">ウィンドウテキスト</param>
+         */
         public static void SetMainWindowText(string text)
         {
             int res = DxLibDLL.DX.SetMainWindowText(text);
@@ -31,7 +33,12 @@ namespace NeonDX.DxLibApi
             }
         }
 
-        // ウィンドウのアイコンを変更
+        /**
+         * <sumary>
+         * ウィンドウのアイコンを変更
+         * </sumary>
+         * <param name="icon_id">アイコンID</param>
+         */
         public static void SetWindowIconID(int icon_id)
         {
             int res = DxLibDLL.DX.SetWindowIconID(icon_id);
@@ -50,7 +57,12 @@ namespace NeonDX.DxLibApi
             }
         }
 
-        // ウィンドウモード
+        /**
+         * <sumary>
+         * ウィンドウモードを変更する
+         * </sumary>
+         * <param name="window_mode">ウィンドウモードにするかどうか</param>
+         */
         public static EnumChangeScreenResult ChangeWindowMode(bool window_mode)
         {
             int res = DxLibDLL.DX.ChangeWindowMode(window_mode ? TRUE : FALSE);
@@ -82,14 +94,25 @@ namespace NeonDX.DxLibApi
             throw new NeonDxDxLibApiException($"DxLib returns invalid result: {res}", EnumDxLibApi.Window_ChangeWindowMode);
         }
 
-        // ウィンドウメッセージ処理
+        /**
+         * <sumary>
+         * ウィンドウメッセージ処理
+         * </sumary>
+         */
         public static int ProcessMessage()
         {
             int res = DxLibDLL.DX.ProcessMessage();
             return res;
         }
 
-        // ScreenFlip描画対象ウィンドウ指定
+        /**
+         * <sumary>
+         * ScreenFlip描画対象ウィンドウ指定
+         * </sumary>
+         * <param name="hwnd">描画対象のウィンドウハンドル</param>
+         * <param name="scaleX">X軸方向の描画倍率(デフォルト: 1.0)</param>
+         * <param name="scaleY">Y軸方向の描画倍率(デフォルト: 1.0)</param>
+         */
         public static void SetScreenFlipTargetWindow(IntPtr hwnd, double scaleX, double scaleY)
         {
             int res = DxLibDLL.DX.SetScreenFlipTargetWindow(hwnd, scaleX, scaleY);
@@ -108,7 +131,12 @@ namespace NeonDX.DxLibApi
             }
         }
 
-        // ScreenFlip描画対象ウィンドウ指定
+        /**
+         * <sumary>
+         * ScreenFlip描画対象ウィンドウ指定
+         * </sumary>
+         * <param name="hwnd">描画対象のウィンドウハンドル</param>
+         */
         public static void SetScreenFlipTargetWindow(IntPtr hwnd)
         {
             int res = DxLibDLL.DX.SetScreenFlipTargetWindow(hwnd);
@@ -127,7 +155,12 @@ namespace NeonDX.DxLibApi
             }
         }
 
-        // Alt+F4や閉じるボタンで終了するかどうかのフラグを設定する
+        /**
+         * <sumary>
+         * Alt+F4や閉じるボタンで終了するかどうかのフラグを設定する
+         * </sumary>
+         * <param name="enabled">自動的に閉じる(デフォルト: TRUE)</param>
+         */
         public static void SetWindowUserCloseEnableFlag(bool enabled)
         {
             int res = DxLibDLL.DX.SetWindowUserCloseEnableFlag(enabled ? TRUE : FALSE);
@@ -146,7 +179,12 @@ namespace NeonDX.DxLibApi
             }
         }
 
-        // Alt+F4や閉じるボタンが押されたかどうかを取得する
+        /**
+         * <sumary>
+         * Alt+F4や閉じるボタンが押されたかどうかを取得する
+         * </sumary>
+         * <param name="StateResetFlag">フラグの読み取り状態をリセットするか(デフォルト: FALSE)</param>
+         */
         public static bool GetWindowUserCloseFlag(bool StateResetFlag)
         {
             int res = DxLibDLL.DX.GetWindowUserCloseFlag(StateResetFlag ? TRUE : FALSE);
@@ -167,16 +205,23 @@ namespace NeonDX.DxLibApi
             return res == TRUE;
         }
 
-        // 画面のサイズを変更できるようにするかどうかのフラグを設定する
-        public static void SetWindowSizeChangeEnableFlag(bool enabled)
+        /**
+         * <sumary>
+         * 画面のサイズを変更できるようにするかどうかのフラグを設定する
+         * </sumary>
+         * <param name="Flag">変更を可能にするかどうか(デフォルト: FALSE)</param>
+         * <param name="FitScreen">変更を可能にするかどうか(デフォルト: TRUE)</param>
+         */
+        public static void SetWindowSizeChangeEnableFlag(bool Flag, bool FitScreen)
         {
-            int res = DxLibDLL.DX.SetWindowSizeChangeEnableFlag(enabled ? TRUE : FALSE);
+            int res = DxLibDLL.DX.SetWindowSizeChangeEnableFlag(Flag ? TRUE : FALSE, FitScreen ? TRUE : FALSE);
 
             if (NeonDxLibApi.IsDebug)
             {
                 NeonDxCallStack.Push(EnumDxLibApi.Window_SetWindowSizeChangeEnableFlag, res, new NeonDxCallStack.ApiArg[]
                 {
-                    new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
+                    new NeonDxCallStack.ApiArg("Flag", $"{Flag}"),
+                    new NeonDxCallStack.ApiArg("FitScreen", $"{FitScreen}"),
                 });
             }
             VerifyDxLibResult(res, EnumDxLibApi.Window_SetWindowSizeChangeEnableFlag);
