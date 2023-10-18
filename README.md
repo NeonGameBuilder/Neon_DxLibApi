@@ -36,7 +36,7 @@ NDX_API_System.DxLib_Init();
 // ウィンドウモード
 NDX_API_Window.ChangeWindowMode(true);
 
-while(1)
+while(true)
 {
     // 裏画面をクリア
     NDX_API_Graphics2D.ClearDrawScreen();

@@ -491,6 +491,7 @@ namespace NeonDX.DxLibApi
         {
             int res = DxLibDLL.DX.ScreenFlip();
 
+            /*
             if (NeonDxLibApi.IsDebug)
             {
                 NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_ScreenFlip, res, new NeonDxCallStack.ApiArg[]
@@ -502,6 +503,7 @@ namespace NeonDX.DxLibApi
             {
                 NeonDxCallStack.Pop();
             }
+            */
         }
     }
 }
