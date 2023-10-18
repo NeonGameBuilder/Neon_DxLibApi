@@ -34,7 +34,9 @@ namespace NeonDX.DxLibApi
         Window_SetScreenFlipTargetWindow,
         Window_SetWindowUserCloseEnableFlag,
         Window_GetWindowUserCloseFlag,
-        
+        Window_SetFullScreenResolutionMode,
+        Window_SetWindowSizeChangeEnableFlag,
+
         //===============================
         // Graphics2D
         //===============================

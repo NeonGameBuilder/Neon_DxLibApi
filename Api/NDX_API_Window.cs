@@ -166,5 +166,56 @@ namespace NeonDX.DxLibApi
 
             return res == TRUE;
         }
+
+        // フルスクリーン時に縦横比を維持する
+        public static void SetFullScreenResolutionMode(EnumResolutionMode resolution_mode)
+        {
+            int mode = 0;
+            switch (resolution_mode)
+            {
+                case EnumResolutionMode.Native:
+                    mode = DX_FSRESOLUTIONMODE_NATIVE;
+                    break;
+                case EnumResolutionMode.Desktop:
+                    mode = DX_FSRESOLUTIONMODE_DESKTOP;
+                    break;
+                case EnumResolutionMode.Maximum:
+                    mode = DX_FSRESOLUTIONMODE_MAXIMUM;
+                    break;
+            }
+            int res = DxLibDLL.DX.SetFullScreenResolutionMode(mode);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetFullScreenResolutionMode, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("resolution_mode", $"{resolution_mode}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Window_SetFullScreenResolutionMode);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+        }
+
+        // 画面のサイズを変更できるようにするかどうかのフラグを設定する
+        public static void SetWindowSizeChangeEnableFlag(bool enabled)
+        {
+            int res = DxLibDLL.DX.SetWindowSizeChangeEnableFlag(enabled ? TRUE : FALSE);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Window_SetWindowSizeChangeEnableFlag, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("enabled", $"{enabled}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Window_SetWindowSizeChangeEnableFlag);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+        }
     }
 }

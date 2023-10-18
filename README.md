@@ -29,6 +29,7 @@
 
 # 使用方法
 
+### ウィンドウモードの場合
 ```
 // DXライブラリの初期化
 NDX_API_System.DxLib_Init();
@@ -56,6 +57,8 @@ while(true)
 // DXライブラリの終了
 NDX_API_System.DxLib_End();
 ```
+
+また、[Neon_DxLibApi_Sample](https://github.com/NeonGameBuilder/Neon_DxLibApi_Sample)にNeonDxLibApiを使用したサンプルプログラムを公開しています。
 
 # デバッグモードとコールスタック
 

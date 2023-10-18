@@ -7,8 +7,6 @@ namespace NeonDX.DxLibApi
      */
     public enum EnumScreen
     {
-        Unknown,
-
         Front,      // 表画面
         Back,       // 裏画面
     }
