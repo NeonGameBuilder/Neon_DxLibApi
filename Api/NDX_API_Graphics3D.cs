@@ -287,7 +287,7 @@ namespace NeonDX.DxLibApi
                 NeonDxCallStack.Pop();
             }
 
-            var handle = new NDX_Handle(res);
+            var handle = new NDX_Handle(EnumHandleType.Model, res);
             return handle;
         }
 

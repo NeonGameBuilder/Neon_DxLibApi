@@ -57,6 +57,7 @@ namespace NeonDX.DxLibApi
         Graphics2D_SetGraphMode,
         Graphics2D_GetScreenState,
         Graphics2D_CreateFontToHandle,
+        Graphics2D_DeleteFontToHandle,
         Graphics2D_ClearDrawScreen,
         Graphics2D_ScreenFlip,
         Graphics2D_SetFullScreenResolutionMode,

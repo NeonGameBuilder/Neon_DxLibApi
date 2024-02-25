@@ -1,10 +1,6 @@
 ﻿
 using NeonDX.DxLibApi.Debug;
-using System.ComponentModel;
-using System;
-using System.Drawing;
 using static DxLibDLL.DX;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace NeonDX.DxLibApi
 {
@@ -14,13 +10,22 @@ namespace NeonDX.DxLibApi
     public class NDX_API_Graphics2D : NDX_API_Base
     {
         private static Dictionary<int, NDX_Handle> _loaded_graph_handles = new Dictionary<int, NDX_Handle>();
+        private static Dictionary<int, NDX_Handle> _loaded_font_handles = new Dictionary<int, NDX_Handle>();
 
         /**
-         * ロード済みハンドルテーブル
+         * ロード済みグラフィック数
          */
         public static int LoadedGraphCount
         {
             get { return _loaded_graph_handles.Count; }
+        }
+
+        /**
+         * ロード済みフォント数
+         */
+        public static int LoadedFontCount
+        {
+            get { return _loaded_font_handles.Count; }
         }
 
         // 矩形を描画
@@ -134,7 +139,7 @@ namespace NeonDX.DxLibApi
                 NeonDxCallStack.Pop();
             }
 
-            var handle = new NDX_Handle(res);
+            var handle = new NDX_Handle(EnumHandleType.Graph, res);
             _loaded_graph_handles[res] = handle;
             return handle;
         }
@@ -166,7 +171,7 @@ namespace NeonDX.DxLibApi
 
             for (int i = 0; i < AllNum; i++)
             {
-                var handle = new NDX_Handle(buffer[i]);
+                var handle = new NDX_Handle(EnumHandleType.Graph, buffer[i]);
                 handles.Add(handle);
                 _loaded_graph_handles[buffer[i]] = handle;
             }
@@ -193,7 +198,9 @@ namespace NeonDX.DxLibApi
                 NeonDxCallStack.Pop();
             }
 
-            return new NDX_Handle(res);
+            var handle = new NDX_Handle(EnumHandleType.Graph, res);
+            _loaded_graph_handles[res] = handle;
+            return handle;
         }
 
         // 点を描画する
@@ -240,9 +247,9 @@ namespace NeonDX.DxLibApi
         }
 
         // 指定のフォントデータで文字列を描画する
-        public static void DrawStringToHandle(int x, int y, string text, NDX_Color color, int FontHandle)
+        public static void DrawStringToHandle(int x, int y, string text, NDX_Color color, NDX_Handle FontHandle)
         {
-            int res = DxLibDLL.DX.DrawStringToHandle(x, y, text, color.ToColorUint(), FontHandle);
+            int res = DxLibDLL.DX.DrawStringToHandle(x, y, text, color.ToColorUint(), FontHandle.Value);
 
             if (NeonDxLibApi.IsDebug)
             {
@@ -286,10 +293,10 @@ namespace NeonDX.DxLibApi
         }
 
         // 指定のフォントデータで描画する文字列の幅(ドット単位)を得る
-        public static int GetDrawStringWidthToHandle(string text, int length, int FontHandle)
+        public static int GetDrawStringWidthToHandle(string text, int length, NDX_Handle FontHandle)
         {
             length = length > 0 ? length : text.Length;
-            int res = DxLibDLL.DX.GetDrawStringWidthToHandle(text, length, FontHandle);
+            int res = DxLibDLL.DX.GetDrawStringWidthToHandle(text, length, FontHandle.Value);
 
             if (NeonDxLibApi.IsDebug)
             {
@@ -348,6 +355,7 @@ namespace NeonDX.DxLibApi
             {
                 NeonDxCallStack.Pop();
             }
+            _loaded_graph_handles.Remove(GrHandle.Value);
         }
 
         // 描画先グラフィック領域の指定
@@ -433,7 +441,7 @@ namespace NeonDX.DxLibApi
         }
 
         // 新しいフォントデータを作成
-        public static int CreateFontToHandle(string font_name, int Size, int Thick, EnumFontType FontType)
+        public static NDX_Handle CreateFontToHandle(string font_name, int Size, int Thick, EnumFontType FontType)
         {
             var map = new Dictionary<EnumFontType, int>()
             {
@@ -464,7 +472,29 @@ namespace NeonDX.DxLibApi
                 NeonDxCallStack.Pop();
             }
 
-            return res;
+            var handle = new NDX_Handle(EnumHandleType.Font, res);
+            _loaded_font_handles[res] = handle;
+            return handle;
+        }
+
+        // 指定のフォントデータをメモリ上から削除する
+        public static void DeleteFontToHandle(NDX_Handle GrHandle)
+        {
+            int res = DxLibDLL.DX.DeleteFontToHandle(GrHandle.Value);
+
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Push(EnumDxLibApi.Graphics2D_DeleteFontToHandle, res, new NeonDxCallStack.ApiArg[]
+                {
+                    new NeonDxCallStack.ApiArg("GrHandle", $"{GrHandle}"),
+                });
+            }
+            VerifyDxLibResult(res, EnumDxLibApi.Graphics2D_DeleteFontToHandle);
+            if (NeonDxLibApi.IsDebug)
+            {
+                NeonDxCallStack.Pop();
+            }
+            _loaded_font_handles.Remove(GrHandle.Value);
         }
 
         // 画面に描かれたものを消去する
